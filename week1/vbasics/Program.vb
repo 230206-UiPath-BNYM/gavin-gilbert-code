@@ -1,75 +1,53 @@
 Imports System
 
 Module Program
-    Sub Main(args As String())
-        Console.WriteLine("Hello World! Prepare to play hangman!")
-        'idea: 1 letter per string, can + strings
-        'start as all #####
-        Dim l1 As String = "#"
-        Dim l2 As String = "#"
-        Dim l3 As String = "#"
-        Dim l4 As String = "#"
-        Dim l5 As String = "#"
 
-		'our word: water
-        Dim ourWord As String = "water"
-        Dim guessWord As String = "#####"
+	Sub Main(args As String())
 
-        Dim chance As Integer = 6
+		Dim mistakesAllowed As Integer = 6
+		Dim guesses As String = ""
 
-        Console.Writeline("Current Word: " + l1 + l2 + l3 + l4 + l5)
+		Console.WriteLine("Hello! Let's play Hangman!")
+		Console.WriteLine("What would you like the mystery word to be? ")
+		
+		Dim wordToBeGuessed As String = Console.ReadLine()
+		Dim wordCopy As String = wordToBeGuessed
 
-        Dim guess As String
+		Console.WriteLine("The mystery word has {0} letters.", wordToBeGuessed.Length)
 
-        While chance > 0
+		While mistakesAllowed > 0 And wordCopy.Length > 0
 
-	        Console.WriteLine("Please guess a letter.")
-    	    guess = Console.ReadLine()
-        	Console.WriteLine("Your letter is: " + guess)
+			Console.WriteLine("Enter your guess: ")
+			Dim guess As String = Console.ReadLine()
 
+			If (wordToBeGuessed.contains(guess)) Then
+				Console.WriteLine("Mystery Word contains {0}.", guess)
+				wordCopy = Replace(wordCopy, guess, "")
+			Else
+				Console.WriteLine("Mystery Word does NOT contain {0}.", guess)
+				mistakesAllowed = mistakesAllowed - 1
+			End If
 
+			guesses += guess
 
-	        Select Case guess
-	            Case "w"
-	                l1 = "w"
-	                Console.WriteLine("Congragulations!")
-	                Console.Writeline("Current Word: " + l1 + l2 + l3 + l4 + l5)
-	            Case "a"
-	                l2 = "a"
-	                Console.WriteLine("Congragulations!")
-	                Console.Writeline("Current Word: " + l1 + l2 + l3 + l4 + l5)
-	            Case "t"
-	                l3 = "t"
-	                Console.WriteLine("Congragulations!")
-	                Console.Writeline("Current Word: " + l1 + l2 + l3 + l4 + l5) 
-	            Case "e"
-	                l4 = "e"
-	                Console.WriteLine("Congragulations!")
-	                Console.Writeline("Current Word: " + l1 + l2 + l3 + l4 + l5)
-	            Case "r"
-	                l5 = "r"
-	                Console.WriteLine("Congragulations!")
-	                Console.Writeline("Current Word: " + l1 + l2 + l3 + l4 + l5)
-	            Case Else
-	                chance = chance - 1
-	                '& means I do not need to change chance
-	                Console.WriteLine("Sorry, " & chance & " chances left.")
+			For Each letter As Char In wordToBeGuessed
+				If (guesses.Contains(letter)) Then
+					Console.Write(letter)
+				Else
+					Console.write("_")
+				End If
+			Next
 
-		        End Select
+			Console.WriteLine()
 
-	        guessWord = l1+l2+l3+l4+l5
-	
-	        If ourWord.Equals(guessWord) Then 
-	            Console.WriteLine("It matches!")
-	            Exit While
-	        End If
+		End While
 
-        
-            
-        End While
+		If (wordCopy.Length > 0) Then
+			Console.WriteLine("You Lost.")
+		Else
+			Console.WriteLine("You Won!")
+		End If
 
-        Console.Writeline("Match? " & ourWord.Equals(guessWord))
-        
-    End Sub
+	End Sub
 
 End Module
