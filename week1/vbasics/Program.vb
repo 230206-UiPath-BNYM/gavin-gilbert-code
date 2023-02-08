@@ -34,7 +34,7 @@ Module Program
 				If (guesses.Contains(letter)) Then
 					Console.Write(letter)
 				Else
-					Console.write("_")
+					Console.Write("_")
 				End If
 			Next
 
