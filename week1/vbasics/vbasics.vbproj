@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <RootNamespace>hangman</RootNamespace>
+    <RootNamespace>vbasics</RootNamespace>
     <TargetFramework>net6.0</TargetFramework>
   </PropertyGroup>
 
