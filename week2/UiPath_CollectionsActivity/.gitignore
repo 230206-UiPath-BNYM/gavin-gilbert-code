@@ -3,6 +3,3 @@
 
 # Exclude local dependencies, caches and project settings
 **/.local
-
-./*.xls
-./*.xlsx
