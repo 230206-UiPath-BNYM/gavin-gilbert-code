@@ -7,7 +7,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1105,1358</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1105,1108</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Process_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="28">
@@ -75,7 +75,7 @@
       <AssemblyReference>System.Private.Xml</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Process" sap:VirtualizedContainerService.HintSize="498,1293" sap2010:WorkflowViewState.IdRef="Sequence_4">
+  <Sequence DisplayName="Process" sap:VirtualizedContainerService.HintSize="498,1043" sap2010:WorkflowViewState.IdRef="Sequence_4">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="hero" />
       <Variable x:TypeArguments="x:String" Name="name" />
@@ -127,7 +127,5 @@
         </ActivityAction>
       </ui:ForEach.Body>
     </ui:ForEach>
-    <ui:OutputDataTable DataTable="[out_heroes_dt]" DisplayName="Output Data Table" sap:VirtualizedContainerService.HintSize="436,80" sap2010:WorkflowViewState.IdRef="OutputDataTable_1" Text="[dt_output]" />
-    <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="436,90" sap2010:WorkflowViewState.IdRef="WriteLine_2" Text="[dt_output]" />
   </Sequence>
 </Activity>
