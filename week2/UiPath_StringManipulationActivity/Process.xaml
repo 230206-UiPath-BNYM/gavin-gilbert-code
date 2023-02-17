@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Process" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Process" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="in_rawInput" Type="InArgument(x:String)" />
     <x:Property Name="out_heroes_dt" Type="OutArgument(sd:DataTable)" />
@@ -7,10 +7,10 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1105,827</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1105,1358</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Process_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
-    <sco:Collection x:TypeArguments="x:String">
+    <scg:List x:TypeArguments="x:String" Capacity="28">
       <x:String>System.Activities</x:String>
       <x:String>System.Activities.Statements</x:String>
       <x:String>System.Activities.Expressions</x:String>
@@ -39,7 +39,7 @@
       <x:String>System.ComponentModel</x:String>
       <x:String>System.Runtime.Serialization</x:String>
       <x:String>System.Xml.Serialization</x:String>
-    </sco:Collection>
+    </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
     <scg:List x:TypeArguments="AssemblyReference" Capacity="31">
@@ -75,4 +75,59 @@
       <AssemblyReference>System.Private.Xml</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Process" sap:VirtualizedContainerService.HintSize="498,1293" sap2010:WorkflowViewState.IdRef="Sequence_4">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="hero" />
+      <Variable x:TypeArguments="x:String" Name="name" />
+      <Variable x:TypeArguments="x:String" Name="location" />
+      <Variable x:TypeArguments="x:String" Name="dt_output" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:InvokeCode ContinueOnError="{x:Null}" Code="out_rawInput = in_rawInput.Split({vbcrlf}, StringSplitOptions.RemoveEmptyEntries)" DisplayName="Invoke Code" sap:VirtualizedContainerService.HintSize="436,165" sap2010:WorkflowViewState.IdRef="InvokeCode_2">
+      <ui:InvokeCode.Arguments>
+        <InArgument x:TypeArguments="x:String" x:Key="in_rawInput">[in_rawInput]</InArgument>
+        <OutArgument x:TypeArguments="s:String[]" x:Key="out_rawInput">[in_heroesArray]</OutArgument>
+      </ui:InvokeCode.Arguments>
+    </ui:InvokeCode>
+    <ui:BuildDataTable DataTable="[out_heroes_dt]" DisplayName="Build Data Table" sap:VirtualizedContainerService.HintSize="436,60" sap2010:WorkflowViewState.IdRef="BuildDataTable_2" TableInfo="&lt;NewDataSet&gt;&#xD;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xD;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xD;&#xA;      &lt;xs:complexType&gt;&#xD;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xD;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xD;&#xA;            &lt;xs:complexType&gt;&#xD;&#xA;              &lt;xs:sequence&gt;&#xD;&#xA;                &lt;xs:element name=&quot;HeroName&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xD;&#xA;                  &lt;xs:simpleType&gt;&#xD;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xD;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xD;&#xA;                    &lt;/xs:restriction&gt;&#xD;&#xA;                  &lt;/xs:simpleType&gt;&#xD;&#xA;                &lt;/xs:element&gt;&#xD;&#xA;                &lt;xs:element name=&quot;SecretIdentity&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Location&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;              &lt;/xs:sequence&gt;&#xD;&#xA;            &lt;/xs:complexType&gt;&#xD;&#xA;          &lt;/xs:element&gt;&#xD;&#xA;        &lt;/xs:choice&gt;&#xD;&#xA;      &lt;/xs:complexType&gt;&#xD;&#xA;    &lt;/xs:element&gt;&#xD;&#xA;  &lt;/xs:schema&gt;&#xD;&#xA;&lt;/NewDataSet&gt;" />
+    <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="436,627" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[in_heroesArray]">
+      <ui:ForEach.Body>
+        <ActivityAction x:TypeArguments="x:String">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:String" Name="heroDetail" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="400,502" sap2010:WorkflowViewState.IdRef="Sequence_3">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:InvokeCode ContinueOnError="{x:Null}" Code="'details&#xD;&#xA;'heroName&#xD;&#xA;'secretIdentity&#xD;&#xA;'location&#xD;&#xA;Dim detailArr As String() = details.Split(&quot; &quot;)&#xD;&#xA;Dim inFirst As Boolean = False&#xD;&#xA;Dim outFirst As Boolean = False&#xD;&#xA;Dim inSecond As Boolean = False&#xD;&#xA;Dim outSecond As Boolean = False&#xD;&#xA;Dim inThird As Boolean = False&#xD;&#xA;&#xD;&#xA;For Each word As String In detailArr&#xD;&#xA;&#x9;&#xD;&#xA;&#x9;If (inThird) Then&#xD;&#xA;&#x9;&#x9;location = location &amp; word &amp; &quot; &quot;&#xD;&#xA;&#x9;&#x9;Continue For&#xD;&#xA;&#x9;End If&#xD;&#xA;&#x9;&#xD;&#xA;&#x9;Select Case Asc(word.Chars(0))&#xD;&#xA;&#x9;Case 65 To 90 ' Case word.Chars(0) is Uppercase&#xD;&#xA;&#x9;&#x9;If (Not outFirst) Then&#xD;&#xA;&#x9;&#x9;&#x9;inFirst = True&#xD;&#xA;&#x9;&#x9;&#x9;heroName = heroName &amp; word &amp; &quot; &quot;&#xD;&#xA;&#x9;&#x9;Else If (Not outSecond) Then&#xD;&#xA;&#x9;&#x9;&#x9;inSecond = True&#xD;&#xA;&#x9;&#x9;&#x9;secretIdentity = secretIdentity &amp; word &amp; &quot; &quot;&#xD;&#xA;&#x9;&#x9;Else&#xD;&#xA;&#x9;&#x9;&#x9;inThird = True&#xD;&#xA;&#x9;&#x9;&#x9;location = location &amp; word &amp; &quot; &quot;&#xD;&#xA;&#x9;&#x9;End If&#xD;&#xA;&#x9;Case 97 To 122 ' Case word.Chars(0) is Lowercase&#xD;&#xA;&#x9;&#x9;If (inFirst) Then&#xD;&#xA;&#x9;&#x9;&#x9;inFirst = False&#xD;&#xA;&#x9;&#x9;&#x9;outFirst = True&#xD;&#xA;&#x9;&#x9;Else If (inSecond) Then&#xD;&#xA;&#x9;&#x9;&#x9;inSecond = False&#xD;&#xA;&#x9;&#x9;&#x9;outSecond = True&#xD;&#xA;&#x9;&#x9;End If&#xD;&#xA;&#x9;&#x9;Continue For&#xD;&#xA;&#x9;Case Else&#xD;&#xA;&#x9;&#x9;Console.WriteLine(&quot;No an alpha character&quot;)&#xD;&#xA;&#x9;End Select&#xD;&#xA;Next" DisplayName="Invoke Code" sap:VirtualizedContainerService.HintSize="338,165" sap2010:WorkflowViewState.IdRef="InvokeCode_3">
+              <ui:InvokeCode.Arguments>
+                <InArgument x:TypeArguments="x:String" x:Key="details">
+                  <VisualBasicValue x:TypeArguments="x:String" ExpressionText="heroDetail" />
+                </InArgument>
+                <OutArgument x:TypeArguments="x:String" x:Key="heroName">
+                  <VisualBasicReference x:TypeArguments="x:String" ExpressionText="hero" />
+                </OutArgument>
+                <OutArgument x:TypeArguments="x:String" x:Key="secretIdentity">
+                  <VisualBasicReference x:TypeArguments="x:String" ExpressionText="name" />
+                </OutArgument>
+                <OutArgument x:TypeArguments="x:String" x:Key="location">
+                  <VisualBasicReference x:TypeArguments="x:String" ExpressionText="location" />
+                </OutArgument>
+              </ui:InvokeCode.Arguments>
+            </ui:InvokeCode>
+            <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[New String() {hero, name, location}]" DataTable="[out_heroes_dt]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="338,186" sap2010:WorkflowViewState.IdRef="AddDataRow_2" />
+          </Sequence>
+        </ActivityAction>
+      </ui:ForEach.Body>
+    </ui:ForEach>
+    <ui:OutputDataTable DataTable="[out_heroes_dt]" DisplayName="Output Data Table" sap:VirtualizedContainerService.HintSize="436,80" sap2010:WorkflowViewState.IdRef="OutputDataTable_1" Text="[dt_output]" />
+    <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="436,90" sap2010:WorkflowViewState.IdRef="WriteLine_2" Text="[dt_output]" />
+  </Sequence>
 </Activity>
