@@ -1,0 +1,254 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="ReadFakePeople" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="out_fakePeople_dt" Type="OutArgument(sd:DataTable)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>1168,2794</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>ReadFakePeople_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="35">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Models</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="78">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="ReadFakePeople" sap:VirtualizedContainerService.HintSize="687,2729" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="phone" />
+      <Variable x:TypeArguments="x:String" Name="fullName" />
+      <Variable x:TypeArguments="x:String" Name="email" />
+      <Variable x:TypeArguments="x:String" Name="occupation" />
+      <Variable x:TypeArguments="x:String" Name="company" />
+      <Variable x:TypeArguments="x:String" Name="address" />
+      <Variable x:TypeArguments="x:String" Name="firstName" />
+      <Variable x:TypeArguments="x:String" Name="lastName" />
+      <Variable x:TypeArguments="s:String[]" Name="nameSplit" />
+      <Variable x:TypeArguments="x:Int32" Default="0" Name="counter" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:BuildDataTable DataTable="[out_fakePeople_dt]" DisplayName="Build Data Table" sap:VirtualizedContainerService.HintSize="625,60" sap2010:WorkflowViewState.IdRef="BuildDataTable_1" TableInfo="&lt;NewDataSet&gt;&#xD;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xD;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xD;&#xA;      &lt;xs:complexType&gt;&#xD;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xD;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xD;&#xA;            &lt;xs:complexType&gt;&#xD;&#xA;              &lt;xs:sequence&gt;&#xD;&#xA;                &lt;xs:element name=&quot;First_x0020_Name&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Last_x0020_Name&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Company&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Occupation&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Address&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Email&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Phone&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;              &lt;/xs:sequence&gt;&#xD;&#xA;            &lt;/xs:complexType&gt;&#xD;&#xA;          &lt;/xs:element&gt;&#xD;&#xA;        &lt;/xs:choice&gt;&#xD;&#xA;      &lt;/xs:complexType&gt;&#xD;&#xA;    &lt;/xs:element&gt;&#xD;&#xA;  &lt;/xs:schema&gt;&#xD;&#xA;&lt;/NewDataSet&gt;" />
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Edge: Random Person/Name Generator | User Identity, Account and Profile Generator" sap:VirtualizedContainerService.HintSize="625,2518" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="77d3888a-c09a-4f9f-b413-85a84b97cc13" Version="V2">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Get Info" sap:VirtualizedContainerService.HintSize="591,2261" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:InterruptibleWhile CurrentIndex="{x:Null}" Condition="[counter &lt; 10]" DisplayName="While" sap:VirtualizedContainerService.HintSize="529,2146" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_1">
+              <ui:InterruptibleWhile.Body>
+                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="493,1980" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <uix:NClick ClickType="Single" DisplayName="Click 'Generate'" sap:VirtualizedContainerService.HintSize="431,157" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="77d3888a-c09a-4f9f-b413-85a84b97cc13" Version="V3">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable BrowserURL="https://fakepersongenerator.com/" DesignTimeRectangle="1225, 229, 120, 30" DesignTimeScaleFactor="1" ElementType="Button" FriendlyName="'Generate'" FullSelectorArgument="&lt;webctrl id='generate' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='generate' tag='INPUT' type='submit' class='btn btn-warning' aaname='Generate' check:text='Generate' /&gt;" Guid="31536a0d-fe54-4141-96a0-09fe5d7ba20d" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAHwAAAAiCAYAAACdmr05AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJSSURBVHhe7Zu/TsMwEMZ5KgZmVngPXqoDYmCAF+hbZGLskKkDpYoqVVFpD5//5WxfkgoJ4sT3SZ9UfHbq+nd3DVJzA6KiJMALUwD8+/MDmvUT7F7uYPd8K56zFUNkiUypPHAM4KSv13vYvz3A/v1RPGcrhsgSmVLoHjhmg4bNLRbP1sgU2Tp54JgJUtkLtGKKbJ064KrvswvEszeydRLgBViAF2YBXpgFeGEW4IU5Y+ArOLV2Q141tOzcTLypAdoKjlwsE+cJvKrgovZx2a6C8eP2oEYPcKrI3JwswH9jU9kxbOe2iWNrONt9azVrH9MJ0lRBp+CTyIkmE163hpOLO5AINZDtOsE46UTR/PPGjk/k/IDr6r62dRvY3SGGyeJg+rg+/A6qjtOK1HH33jaRSALF65M5GO+9nrL+bNN2qPyAx4c2YFPBBAiaJEwCNEgQfJ0eftdB4mTijfN54Cb54vXsnv/RswDuKtXLxvVhs7oCuL1P4DQKPF7LAjfrWQlw4pGWTiEG1cV4HPhQe2WAE9BuvL/CBxJmQucHfOSmjUJMgfbPNWMUwhiQNK6vFyXYWEvv+xxTOUPgyraSksPCA0VFVUTnDSdECFHHg24ynBDx9cx6JRa4/TvoItMnQZ7Atc3hhGJacPx9GgMZAI6O7wO6WDo32ZMCHSaNWZP8J0A0dcVnDFz8FxbghVmAF2YBXpgFeGEW4IWZBy4/U16m+36mLA8iLNO9DyLIo0YLs2KILJEp+6gRCgOYDTgJ+754xlYMkSWFjQqAi5YvAV6UAH4AORdjpV09gzkAAAAASUVORK5CYII=" InformativeScreenshot="172da3a7319201d665b0d980b5be6c96.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Random Person/Name Generator | User Identity, Account and Profile Generator' /&gt;" SearchSteps="FuzzySelector, Image" Version="V1" Visibility="Interactive" />
+                    </uix:NClick.Target>
+                  </uix:NClick>
+                  <uix:NGetText DisplayName="Get Text 'Full Name'" sap:VirtualizedContainerService.HintSize="431,157" sap2010:WorkflowViewState.IdRef="NGetText_1" ScopeIdentifier="77d3888a-c09a-4f9f-b413-85a84b97cc13" TextString="[fullName]" Version="V3">
+                    <uix:NGetText.Target>
+                      <uix:TargetAnchorable BrowserURL="https://fakepersongenerator.com/" DesignTimeRectangle="761, 517, 109, 16" DesignTimeScaleFactor="1" FriendlyName="'Leonard C Simpson'" FullSelectorArgument="&lt;webctrl tag='B' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='B' type='' class='click' /&gt;" Guid="3de3b9a2-458a-47f4-b1f2-8c3e27127383" InformativeScreenshot="eb463114844a3d73a37e4caa4c48da6e.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Random Person/Name Generator | User Identity, Account and Profile Generator' /&gt;" SearchSteps="FuzzySelector" Version="V1" Visibility="Interactive" />
+                    </uix:NGetText.Target>
+                  </uix:NGetText>
+                  <uix:NGetText DisplayName="Get Text 'Email'" sap:VirtualizedContainerService.HintSize="431,157" sap2010:WorkflowViewState.IdRef="NGetText_2" ScopeIdentifier="77d3888a-c09a-4f9f-b413-85a84b97cc13" ScrapingOptions="None" TextString="[email]" Version="V3">
+                    <uix:NGetText.Target>
+                      <uix:TargetAnchorable BrowserURL="https://fakepersongenerator.com/" DesignTimeRectangle="976, 623, 539, 34" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'gudrun1991@gmail.com'" FullSelectorArgument="&lt;webctrl class='form-control' tag='INPUT' type='text' /&gt;" FuzzyAccuracy="1" FuzzySelectorArgument="&lt;webctrl class='form-control' tag='INPUT' type='text' aaname='' /&gt;" Guid="5cb31f34-5227-490d-8df2-c1c282c6ebaa" ImageBase64="" InformativeScreenshot="4ba546833e89a43ab6de3625b041431e.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Random Person/Name Generator | User Identity, Account and Profile Generator' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V1" Visibility="Interactive">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                            <uix:Target DesignTimeRectangle="727, 633, 35, 16" ElementType="Text" FriendlyName="'Email'" FullSelectorArgument="&lt;webctrl aaname='Email' tag='SPAN' /&gt;" FuzzyAccuracy="1" FuzzySelectorArgument="&lt;webctrl aaname='Email' tag='SPAN' type='' class='' check:innerText='Email' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAACcAAAAUCAYAAAAOTSQ2AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADRSURBVEhL7ZLRDcQgCEBvdAdgBFfQLeoYdhQOEdTYflivl/jhS0xKIfJEP7gwW26WLTdLIxfRgUFj7pc9pOxNTodgAN2ZgoC263OR+4vEEC/IBWsQfGimnE+e/uuUwUepJng6Naf1Nffi5LJEbaBSReiwFFtqRYhY3VOeDjj6Ip7K1RO2S5oRLGM1IloZJjVpptMRPczLDU2ul9NmzJ1cblwOu4ZcldJrX2dyl9xqcu175PiHay3vol8i9PTNcb3ukepYUPLjcuux5WbZcnMgfgF8SmRnh99fJgAAAABJRU5ErkJggg==" SearchSteps="FuzzySelector, Image" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:NGetText.Target>
+                  </uix:NGetText>
+                  <uix:NGetText DisplayName="Get Text 'Occupation(Job Title)'" sap:VirtualizedContainerService.HintSize="431,157" sap2010:WorkflowViewState.IdRef="NGetText_3" ScopeIdentifier="77d3888a-c09a-4f9f-b413-85a84b97cc13" ScrapingOptions="None" TextString="[occupation]" Version="V3">
+                    <uix:NGetText.Target>
+                      <uix:TargetAnchorable BrowserURL="https://fakepersongenerator.com/" DesignTimeRectangle="976, 683, 539, 34" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'Agricultural Equipment'" FullSelectorArgument="&lt;webctrl class='form-control' idx='13' tag='INPUT' type='text' /&gt;" FuzzySelectorArgument="&lt;webctrl class='form-control' aaname='' tag='INPUT' type='text' /&gt;" Guid="4513b2ef-3e6e-4766-954e-38e5b328b918" InformativeScreenshot="f3cfd0b179fec954d7ea63c84a570936.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Random Person/Name Generator | User Identity, Account and Profile Generator' /&gt;" SearchSteps="FuzzySelector" Version="V1" Visibility="Interactive">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                            <uix:Target DesignTimeRectangle="727, 693, 132, 16" ElementType="Text" FriendlyName="'Occupation(Job Title)'" FullSelectorArgument="&lt;webctrl aaname='Occupation(Job Title)' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Occupation(Job Title)' tag='SPAN' type='' class='' check:innerText='Occupation(Job Title)' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAIgAAAAUCAYAAABWHnVqAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAALfSURBVGhD7ZaNUcMwDIUZvQNkhKyQbkHHKKMYS5ZiPfkvhHIEzt+d73AVy0/SC+1bmEw6TINMukyDTLpMg0y6TINMulQM8gzbcgu3m1nrQ2LX5nlfQOtjfbH2jy0stzWUGVPP1nfZDjiuqzILWFELa1rC9kHPP8K6/x2BWB/q3XJ/yi6DBuGE8WInnguqNuZaeIO8FhpWq9k/ZRBkXN95g7TqMwZJRdZcRJRFkRgyjqxDsfS5bSQXvWzx9oi+oe9rI6/o0JiJcx79TPJ5zfAMGF4aezf3+heCNDktmYpBbA1uSEnXanp0bIhVg+wmwJ6zlsIgvZlFSLPOQsgGGblNh8cbbya778WOGCQK30Wms1oIN9YWIEPQfL6B1iDJHHnouJfGNe7VPRgAcHHWZXrp9mry5vMN+gahjRhd8xQxW4Odi+LOR7JBWKR7awBzuPdsN48XKUWDQVDgV/K1DVLeiw0a6OK40wVYg9Qab7Xg34n6Gc93DNI+a3tb6jhlEGwe0oulHCODOA0V0/CZmEfX0CCVHATFDxmkpguwBilzEVZbvjdTmqbE18dAbW2DcH7Ts7ywLq/j1FcMNM/Ri6UCzhuEn4WiMJ9v4F5so7Y8qIGu4cvzRwwyyE/4O879SP2Vrxg7BOWgQSr3Yr1HdNma3CBAW72Ptn/lsPq9V75jEKing9dmDBLhhF68HIIGlQXlxONYzp8Gg4OwcZvL55VcZrBtg0jM1ID7gUE4Xhpi1wJDirCp2/vUz7z32lr4+piDBtEa7VywRsL32BuEyY3flxfFyHB1wUWdmJqAV2wKNQ8MsoR1pYbJM/ZuOEsDFa36zB5PzbYGIdIg9LwdSNLbNki6x8ZLLfK5wqbQuBlahHQt9830COMtxgaRmmNOHrKLec04M8IZLFIxyC/iC7oS1sj/FarRGXAa5DD0X+Sq2l5Bvb5pkK/A+sa/Ff4i9PVlf3so1zLI5HJMg0w6hPAJq5K6Gv6VqdMAAAAASUVORK5CYII=" SearchSteps="FuzzySelector, Image" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:NGetText.Target>
+                  </uix:NGetText>
+                  <uix:NGetText DisplayName="Get Text 'Company Name'" sap:VirtualizedContainerService.HintSize="431,157" sap2010:WorkflowViewState.IdRef="NGetText_4" ScopeIdentifier="77d3888a-c09a-4f9f-b413-85a84b97cc13" ScrapingOptions="None" TextString="[company]" Version="V3">
+                    <uix:NGetText.Target>
+                      <uix:TargetAnchorable BrowserURL="https://fakepersongenerator.com/" DesignTimeRectangle="976, 568, 539, 34" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'Singer Lumber'" FullSelectorArgument="&lt;webctrl class='form-control' idx='14' tag='INPUT' type='text' /&gt;" FuzzySelectorArgument="&lt;webctrl class='form-control' aaname='' tag='INPUT' type='text' /&gt;" Guid="6afea4b2-65ff-4fa7-85cc-dfc344f376bf" InformativeScreenshot="59ab71e91b8348a2ccd5a6231649985b.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Random Person/Name Generator | User Identity, Account and Profile Generator' /&gt;" SearchSteps="FuzzySelector" Version="V1" Visibility="Interactive">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                            <uix:Target DesignTimeRectangle="727, 578, 101, 16" ElementType="Text" FriendlyName="'Company Name'" FullSelectorArgument="&lt;webctrl aaname='Company Name' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Company Name' tag='SPAN' type='' class='' check:innerText='Company Name' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAGkAAAAUCAYAAACOPhMlAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJ2SURBVGhD7VZRbsMwCN3V8+8j+ArpLdpjtEfxAIMBmyTLtK1NlydZmmsMj/dwtI9y4uVxmnQAnCYdAKdJB8Bp0gEQmHQvc5rKNOlKlzufvTNuJWO/+cZ7xf2SypRmUOY58CY95pIGU5bJvxe4T1j5yj8xXsik+oLCV0PmpTI/eN+/NmcgNgux12o4nVODKsJkcpEAcP+W5awXaf1l4710mU1uvU85HbeVHpl3zsBnyrBTDCbxMCsnow2dwf1r1nPk4O4E+duZ1blCTRqMWAKL1prv92xGa0rM0dxWPCHYhONmqtB9bonvcpl9PWcRSCgjiAjIWw8ersdCTenH8UNwfHfe7su+1a3x0q/Ljeg5A9Sk4DBEFEdERKhqin0Nw0RjDiY2kASML8DA1QpiV7hQraW8FMv3WFh3r+NoMZqo/ODUmYJQHqamAfZk43ebFBO2xWKT3CemN6kTLqpBZtBE4tLG1k3ytfFvy8vDC0YcWI/lng2nDZNs3dYzD4P2pSs2aUgeY5mw3P1Zk5o5CyJsmaS1kNfaEHqTRFzM7XtWc6Qnd77bJBsb42v/OFjhoxfnin3DpCZAhQrfCwfYa5LkuEBNGzdgqRZwT4aj4S74tkmBVhGMSQAh5YyqiZSYTlhFvx8Lb5pk412TfS7mYkTYNoljOk4jMHdnEkD4OZPskNLenO8ySfLboR/18yYRRAhd4+tiYyTGihQU2TQp5ZJNPiemiEALm6/5Jd9XTBqEDRGb1HptQ8o1hRP+Tvn57k6TEC4fLNc/IDDpb1FNUgF+BSiiG6Rj4V+YhJPaT+eR8N4m0acHPiEHfkWIp5t0YhunSS+PUj4BjNqw0I9pb9wAAAAASUVORK5CYII=" SearchSteps="FuzzySelector, Image" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:NGetText.Target>
+                  </uix:NGetText>
+                  <uix:NGetText DisplayName="Get Text 'Street'" sap:VirtualizedContainerService.HintSize="431,157" sap2010:WorkflowViewState.IdRef="NGetText_5" ScopeIdentifier="77d3888a-c09a-4f9f-b413-85a84b97cc13" ScrapingOptions="None" TextString="[address]" Version="V3">
+                    <uix:NGetText.Target>
+                      <uix:TargetAnchorable BrowserURL="https://fakepersongenerator.com/Index/generate" DesignTimeRectangle="1016, 480, 139, 16" DesignTimeScaleFactor="1" FriendlyName="'1323 Hill Street'" FullSelectorArgument="&lt;webctrl idx='6' tag='B' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' tag='B' class='' /&gt;" Guid="82d62e60-ef61-43eb-ae11-983b1c161b9f" InformativeScreenshot="993db80ba70ad347b58e22bf5c073871.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Random Person/Name Generator | User Identity, Account and Profile Generator' /&gt;" SearchSteps="FuzzySelector" Version="V1" Visibility="Interactive">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                            <uix:Target DesignTimeRectangle="970, 478, 513, 20" ElementType="Text" FriendlyName="'Street: 1323 Hill Street'" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;p' idx='5' tag='P' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' class='' tag='P' aaname='Street: ' check:innerText='Street:*' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAgUAAAAYCAYAAABqS45hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAOTSURBVHhe7dptbuowEIXhuye2groMJBZSsY6qi6lYUW489tjj8UdCG1VQvY/kHyQhsUHinAD/FgAAgBWlAAAACEoBAAAQlAIAACAoBQAAQFAKAACAoBQAAADRloKv23I+nZaTGZfPtE98LJfTebl9pYeHuy+3N3/Nfe7v5858y/Y4LusKnM+L2d9bb9l3fr+n7R362r3d1lVYeo50bX+ce6zznV5r9XGNc9LRvmbhup31HizMd2uuAIDnV5cCCScX+Cmwyof+M5aC+JxuOLrAj8MEZXe/rq8+r45hAO4tBd43SkFddMooa9+45kH2FhgAwPOrSoF8wDeBZrdr0JgACoG27rvpXes1RlAdWm2J6O+vQzgGTbzmuCSUOZ3f4jntsXo3Hbfp+ct86v3lsVzbh7wWiLTGxt5S4I97uBS068ivp8ytfp/CCOvLa71qEXLzScNfd/Re1tvX0awbAPBK6m8KUuiNAzgIgWNCPgWKDRIJCxsQct5yxzrfHwNvPgcrzCc+V0Nq/NwUpvnaGq5ubqNzbL0+v1YKSsC31wrmpSCPUCBcIdCha9S51KN+vfPozgUA8Cqa/xRsf9D3SoF57PcnIZBiyG3tf7QUFNNAHwa25cLbyHfZs3kNAraM40pB/tbCjPr4di25FJhvOtrXLD1P5tKWJr2uXmvXXAEAL6H9o6Fh7yzLh74LdV8KJsEo59jan4Lo8FKQjI/REG0LS2EDs2OytjgOLAVB73o58MelwK7dvsf1CM/Tc3RGug6lAAD+jmkpyKqv9/eUgkmwbu0/tBS0wZjvsM3dcjmunlcbeHrnPJi/C/fCzcMf5x5/J2j1OfX7ZB+vWx4qBWGNeo7O+MFcAQDPyZSCGHjdD/cqyENQmFBsQj4GyTjUt/Yf+02Bhp6uyz/W+XSDXsPah7ktGZYL90KvcVQpcOcTflt7TK8U9F6zQkvQYL0rSgEA/B27/mgoYVJ9LT0rBRoUbWDpeef7jy0Fvd/ebQEY3SnHkNNQdKP6lsH4tVIwnnf780Ec4Vy9UpCv7Yf7ecCP+r3U7ePyAAB4fu3PB52Q8OGk4SLb5fj2LtuHlg/52f4cNBJMdaGY6ZaCoCoGdq51cNpR1uyKwagQBD7ss+NLQdAUAzc3G9jDUhD499zNvw5+Py/7GlIKAOCV7ftPAQAA+PMoBQAAQFAKAACAoBQAAABBKQAAAIJSAAAABKUAAACsluU/5xTJm6T+7E8AAAAASUVORK5CYII=" SearchSteps="FuzzySelector, Image" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:NGetText.Target>
+                  </uix:NGetText>
+                  <uix:NGetText DisplayName="Get Text 'Telephone'" sap:VirtualizedContainerService.HintSize="431,157" sap2010:WorkflowViewState.IdRef="NGetText_6" ScopeIdentifier="77d3888a-c09a-4f9f-b413-85a84b97cc13" ScrapingOptions="None" TextString="[phone]" Version="V3">
+                    <uix:NGetText.Target>
+                      <uix:TargetAnchorable BrowserURL="https://fakepersongenerator.com/Index/generate" DesignTimeRectangle="1043, 546, 87, 16" DesignTimeScaleFactor="1" FriendlyName="'419-729-4714'" FullSelectorArgument="&lt;webctrl idx='7' isleaf='1' tag='B' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' isleaf='1' tag='B' class='' /&gt;" Guid="9bcd9a54-8eed-4580-9353-2edc09702fdf" InformativeScreenshot="12691665fc10d8e5fd09f6796d9695e2.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Random Person/Name Generator | User Identity, Account and Profile Generator' /&gt;" SearchSteps="FuzzySelector" Version="V1" Visibility="Interactive">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                            <uix:Target DesignTimeRectangle="970, 544, 513, 20" ElementType="Text" FriendlyName="'Telephone: 419-729-4714'" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;p' idx='7' tag='P' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' class='' tag='P' aaname='Telephone: ' check:innerText='Telephone:*' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAgUAAAAYCAYAAABqS45hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAPRSURBVHhe7drhbdswEIbh7uRVhIxhwH+zg+E5jAwTZCJVOvLI45GUqDRNVPR9AKJ2SImkHPg7Kf01AwAALCgKAACAoCgAAACCogAAAAiKAgAAICgKAACAoCgAAAAiFwXvj3m6XOZLr92ecWDb87Y/Zsxzvi7zXd/i29P6mB8v4dq01vpxn5p9cp30ml6uy2779Bx1m+bHexxk1iHt5bH8JDsyX6neX3ku2/x59dj+fGlvX/I7AwD4Cp0nBeFL/Ugw/29FgQ3scq1lSNu+dsgPBKdv6Tq7gsD1H53Pau2vVxRMd1OGFMVlZy47hqIAAE7jWFHwdk1BsDbbXxUFO2On+9MEmr3zjUXBzR7vwyWM0X4bShJmt0cRlkVoLcqwrO+6/fiKe6qS95bXNb2EOXKfBnieT9dRXeeOMN5cC12HPh1I61rH/MF83f2V5DO3TybSZz4t+1//bRUFrpChKACA0xgvCuQL3wdSDpyiKBgZa8NGxmt/DNYUNjFEUniE/hzc5fsq+Ipzx/4qyFrh1ZPX9/D7kL5wrjqA+yG9W4SsYlAXY2Xt9bUI+/vsfFv7M+LcRd/6M/mcdO76uobPflnTPRxPUQAA5zFYFPj3gYRM/FLPRcGRsSocE8IqhJI9Xo6NQW5fJybY6357vvV1Dkm1rmcomBcp1JZzhNf1XleyDten46s2EIzh2O3iRefUvXxmvrH9xdD3n0MS+/16bRETX4/sHQDwPQaLgnj32GpV0I+N9SHsj7dBZIM+jzPkLnqgKHCPxW0bKgpsqC36oRnX0ejTY+Q8t2tYj+xHgzQ2u4fWUwJH5/PX5tB8o/uL41r7DlpFQfy90H1RFADA6RwqCvohEANEvuDHxv5cUVA/KRjjQtQ1v59eUVAoQrhfFOydq1cQVDbne51fB/cXioWt61gXBWmNrVZ8XgCAn3Lozwc++Kwc1kfGKnvMdlFgXycSdgNFQePc4zTo2s3vV0PQzhXCNP/Mv2/Tee1dd5bCtlEQHJtvdH/hGm4Heb3mtM5WoygAgFM4+B8N7d1hGKNhUQT9yFjbb0JdQ8fOXQZ96Pchpe+3i4LYXwRsPd+orZDVEKyvYQxCbbuBGNbXHNf9c0jc36fmy5r70zk3n0rURUFF17Z5HgDAdxovChb+bi8HcwwQ8wW/P/Yawk6aLSDqkO4FfevcvbH2fBp22nJfWbzsOVwULIq5RwJaQ7gx1l/j3HIYH57PaO5vKMwpCgDgX9QpCv4uCRvCAACAU6EoAAAAgqIAAACIHykKAADA+VAUAAAAQVEAAAAERQEAAFjM829k47DB5luLwgAAAABJRU5ErkJggg==" SearchSteps="FuzzySelector, Image" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:NGetText.Target>
+                  </uix:NGetText>
+                  <ui:MultipleAssign DisplayName="Separate Name Components" sap:VirtualizedContainerService.HintSize="431,163" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+                    <ui:MultipleAssign.AssignOperations>
+                      <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+                        <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_4">
+                          <ui:AssignOperation.To>
+                            <OutArgument x:TypeArguments="s:String[]">[nameSplit]</OutArgument>
+                          </ui:AssignOperation.To>
+                          <ui:AssignOperation.Value>
+                            <InArgument x:TypeArguments="s:String[]">[fullName.Split(" ".ToCharArray)]</InArgument>
+                          </ui:AssignOperation.Value>
+                        </ui:AssignOperation>
+                        <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
+                          <ui:AssignOperation.To>
+                            <OutArgument x:TypeArguments="x:String">[firstName]</OutArgument>
+                          </ui:AssignOperation.To>
+                          <ui:AssignOperation.Value>
+                            <InArgument x:TypeArguments="x:String">[nameSplit(0)]</InArgument>
+                          </ui:AssignOperation.Value>
+                        </ui:AssignOperation>
+                        <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_2">
+                          <ui:AssignOperation.To>
+                            <OutArgument x:TypeArguments="x:String">[lastName]</OutArgument>
+                          </ui:AssignOperation.To>
+                          <ui:AssignOperation.Value>
+                            <InArgument x:TypeArguments="x:String">[nameSplit(2)]</InArgument>
+                          </ui:AssignOperation.Value>
+                        </ui:AssignOperation>
+                      </scg:List>
+                    </ui:MultipleAssign.AssignOperations>
+                  </ui:MultipleAssign>
+                  <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{firstName, lastName, company, occupation, address, email, phone}]" DataTable="[out_fakePeople_dt]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="431,186" sap2010:WorkflowViewState.IdRef="AddDataRow_2" />
+                  <Assign sap:VirtualizedContainerService.HintSize="431,61" sap2010:WorkflowViewState.IdRef="Assign_2">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:Int32">[counter]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:Int32">[counter + 1]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                </Sequence>
+              </ui:InterruptibleWhile.Body>
+            </ui:InterruptibleWhile>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="0, 0, 0, 0" BrowserType="Edge" IconBase64="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" InformativeScreenshot="6e255286ac044f8e1fe3e78c879e6ec7.jpg" Selector="&lt;html app='msedge.exe' title='Random Person/Name Generator | User Identity, Account and Profile Generator' /&gt;" Title="Random Person/Name Generator | User Identity, Account and Profile Generator" Url="https://fakepersongenerator.com/" />
+      </uix:NApplicationCard.TargetApp>
+    </uix:NApplicationCard>
+  </Sequence>
+</Activity>
