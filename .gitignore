@@ -1,0 +1,8 @@
+# Ignore UiPath Studio settings
+**/.settings
+
+# Exclude local dependencies, caches and project settings
+**/.local
+
+**/*.xls
+**/*.xlsx
